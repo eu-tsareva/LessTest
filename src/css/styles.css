@@ -1,0 +1,67 @@
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container,
+main {
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+.main-nav {
+  float: left;
+  width: 700px;
+}
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.main-nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.main-nav ul li a {
+  display: block;
+}
+.search {
+  float: right;
+  max-width: 300px;
+}
+.slider {
+  float: left;
+  width: 560px;
+  height: 500px;
+}
+.index-aside {
+  float: right;
+  width: 400px;
+}
+.program {
+  float: left;
+  width: 300px;
+  padding-right: 20px;
+}
+.program:last-child {
+  padding-right: 0;
+}
+.socials {
+  float: left;
+  width: 700px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.socials li {
+  display: inline-block;
+  margin-right: 30px;
+}
+.socials li a {
+  display: block;
+}
+.copyright {
+  float: right;
+  width: 200px;
+}

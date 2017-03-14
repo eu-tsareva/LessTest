@@ -3,7 +3,7 @@
 {% set page = 'home' %}
 
 {% block content %}
-  <section class="index-block">
+  <section class="index-block clearfix">
     <div class="slider">
 
     </div>
@@ -13,7 +13,7 @@
       {{ gym.addGym("ул.Битютская 16", "8(495)256-21-09", "gym-green") }}
     </aside>
   </section>
-  <section class="index-block">
+  <section class="index-block clearfix">
     {% import 'templates/macros/program.njk' as program %}
     {{ program.addProgram ("Тренажеры",
                            "В просторном помещении располагаются самые разнообразные тренажеры,

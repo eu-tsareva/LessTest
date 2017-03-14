@@ -1,0 +1,90 @@
+// out: ../styles.css
+@max-width: 960px;
+
+body {
+
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.align-center() {
+  margin: 0 auto;
+}
+
+.reset-space() {
+  margin: 0;
+  padding: 0;
+}
+
+.horizontal-list (@padding: 10px) {
+  .reset-space;
+  list-style: none;
+    li {
+      display: inline-block;
+      margin-right: @padding;
+        a {
+          display: block;
+        }
+    }
+}
+
+
+.container,
+main {
+  width: @max-width;
+  .align-center;
+  padding: 0 10px;
+}
+
+
+.main-nav {
+  float: left;
+  width: 700px;
+    ul {
+      .horizontal-list(20px);
+    }
+
+}
+
+.search {
+  float: right;
+  max-width: 300px;
+}
+
+.slider {
+  float: left;
+  width: 560px;
+  height: 500px;
+}
+
+.index-aside {
+  float: right;
+  width: 400px;
+}
+
+.program {
+  float: left;
+  @pr-padding: 20px;
+  width: @max-width / 3 - @pr-padding;
+  padding-right: @pr-padding;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.socials {
+  float: left;
+  width: 700px;
+  text-align: center;
+  .horizontal-list(30px);
+}
+
+.copyright {
+  float: right;
+  width: 200px;
+}

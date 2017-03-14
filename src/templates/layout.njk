@@ -9,27 +9,25 @@
 </head>
 
 <body>
-  <div class="container">
-    {# Header #}
-    {% include 'templates/partials/header.njk' %}
+  {# Header #}
+  {% include 'templates/partials/header.njk' %}
 
-    {# Main content #}
-    <main class="clearfix">
-      {#
-      {% include 'templates/partials/breadcrumbs.njk' %}
-      <div class="history-wrapper">
-        <b>History:</b>
-        <div id="history"></div>
-        <button id="bookmark"></button>
-      </div>
-      #}
+  {# Main content #}
+  <main class="clearfix">
+    {#
+    {% include 'templates/partials/breadcrumbs.njk' %}
+    <div class="history-wrapper">
+      <b>History:</b>
+      <div id="history"></div>
+      <button id="bookmark"></button>
+    </div>
+    #}
 
-      {% block content %} {% endblock %}
-    </main>
+    {% block content %} {% endblock %}
+  </main>
 
-    {# Footer #}
-    {% include 'templates/partials/footer.njk' %}
-  </div>
+  {# Footer #}
+  {% include 'templates/partials/footer.njk' %}
 <script src="../js/cookies.js"></script>
 </body>
 </html>

@@ -1,24 +1,26 @@
 <header class="main-header">
-  {# Title #}
-  <h1 class="logo"><a{% if page != 'home' %} href="/" {% endif %}><span class='logo-mark'>ABC</span> FITNESS</a></h1>
+  <div class="container">
+    {# Title #}
+    <h1 class="logo"><a{% if page != 'home' %} href="/" {% endif %}><span class='logo-mark'>ABC</span> FITNESS</a></h1>
 
-  {# Navigation #}
-  <div class="menu clearfix">
-    <nav class="main-nav clearfix">
-      <ul class="main-nav-list">
-        <li><a class="main-nav-link">Залы</a></li>
-        <li><a href="#">Цены</a></li>
-        <li><a href="#">Расписание</a></li>
-        <li><a href="#">Контакты</a></li>
-      </ul>
-    </nav>
+    {# Navigation #}
+    <div class="menu clearfix">
+      <nav class="main-nav clearfix">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link">Залы</a></li>
+          <li><a href="#">Цены</a></li>
+          <li><a href="#">Расписание</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
 
-    {# Search #}
-    <div class="search">
-      <form class="search-form" action="/search/str" method="post">
-        <input type="search" name="words">
-        <button type="submit" class="search-btn">искать</button>
-      </form>
+      {# Search #}
+      <div class="search">
+        <form class="search-form" action="/search/str" method="post">
+          <input type="search" name="words">
+          <button type="submit" class="search-btn">искать</button>
+        </form>
+      </div>
     </div>
   </div>
 </header>
