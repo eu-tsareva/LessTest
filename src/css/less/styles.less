@@ -1,15 +1,22 @@
 // out: ../styles.css
+
+/*
+*
+* Variables
+*
+*/
+
 @max-width: 960px;
+@basic-bg-color: #FF4F1C;
+@basic-color: #FFFFFF;
+@img: "../img/";
 
-body {
-
-}
-
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+/*
+*
+* mixins
+*
+*
+*/
 
 .align-center() {
   margin: 0 auto;
@@ -18,6 +25,15 @@ body {
 .reset-space() {
   margin: 0;
   padding: 0;
+}
+
+.width(@parent, @padding, @border) {
+  width: @parent - 2*@padding - 2*@border;
+}
+
+.border-solid-rounded(@width: 1px, @color: #000, @radius: 0) {
+  border: @width solid @color;
+  border-radius: @radius;
 }
 
 .horizontal-list (@padding: 10px) {
@@ -32,12 +48,59 @@ body {
     }
 }
 
+.program-color(@color) {
+  border-color: @color;
+  h2 {
+    color: @color;
+  }
+
+  .btn-prog {
+    background-color: @color;
+  }
+}
+
+/*
+*
+* General styles
+*
+*/
+
+body {
+
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.btn {
+  display: block;
+
+  text-decoration: none;
+  text-align: center;
+  color: @basic-color;
+
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: @basic-bg-color;
+}
+
 
 .container,
 main {
   width: @max-width;
   .align-center;
   padding: 0 10px;
+}
+
+.main-header,
+.main-footer {
+  padding: 20px 0;
+  background-color: @basic-bg-color;
+  color: @basic-color;
 }
 
 
@@ -55,26 +118,56 @@ main {
   max-width: 300px;
 }
 
-.slider {
+.slider-block {
   float: left;
   width: 560px;
-  height: 500px;
 }
+
 
 .index-aside {
   float: right;
   width: 400px;
 }
 
+.gym {
+  margin-bottom: 40px;
+
+  a {
+    float: left;
+    margin-right: 10px;
+  }
+}
+
 .program {
   float: left;
-  @pr-padding: 20px;
-  width: @max-width / 3 - @pr-padding;
-  padding-right: @pr-padding;
+
+  @h-padding: 20px;
+  @border: 1px;
+  .width(306, @h-padding, @border);
+  padding: 10px @h-padding;
+  margin-right: 20px;
+
+  .border-solid-rounded(@radius: 15px);
 
   &:last-child {
-    padding-right: 0;
+    margin-right: 0;
   }
+
+  &-gym {
+    .program-color (#ff0000);
+  }
+
+  &-group {
+    .program-color (#00ff00);
+  }
+
+  &-salon {
+    .program-color (#0000ff);
+  }
+}
+
+.btn-prog {
+  padding: 10px 20px;
 }
 
 .socials {

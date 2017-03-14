@@ -1,13 +1,45 @@
+/*
+*
+* Variables
+*
+*/
+/*
+*
+* mixins
+*
+*
+*/
+/*
+*
+* General styles
+*
+*/
 .clearfix::after {
   content: "";
   display: table;
   clear: both;
+}
+.btn {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #FF4F1C;
 }
 .container,
 main {
   width: 960px;
   margin: 0 auto;
   padding: 0 10px;
+}
+.main-header,
+.main-footer {
+  padding: 20px 0;
+  background-color: #FF4F1C;
+  color: #FFFFFF;
 }
 .main-nav {
   float: left;
@@ -29,22 +61,61 @@ main {
   float: right;
   max-width: 300px;
 }
-.slider {
+.slider-block {
   float: left;
   width: 560px;
-  height: 500px;
 }
 .index-aside {
   float: right;
   width: 400px;
 }
+.gym {
+  margin-bottom: 40px;
+}
+.gym a {
+  float: left;
+  margin-right: 10px;
+}
 .program {
   float: left;
-  width: 300px;
-  padding-right: 20px;
+  width: 264px;
+  padding: 10px 20px;
+  margin-right: 20px;
+  border: 1px solid #000;
+  border-radius: 15px;
 }
 .program:last-child {
-  padding-right: 0;
+  margin-right: 0;
+}
+.program-gym {
+  border-color: #ff0000;
+}
+.program-gym h2 {
+  color: #ff0000;
+}
+.program-gym .btn-prog {
+  background-color: #ff0000;
+}
+.program-group {
+  border-color: #00ff00;
+}
+.program-group h2 {
+  color: #00ff00;
+}
+.program-group .btn-prog {
+  background-color: #00ff00;
+}
+.program-salon {
+  border-color: #0000ff;
+}
+.program-salon h2 {
+  color: #0000ff;
+}
+.program-salon .btn-prog {
+  background-color: #0000ff;
+}
+.btn-prog {
+  padding: 10px 20px;
 }
 .socials {
   float: left;

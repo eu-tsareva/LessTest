@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
   <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/jquery.bxslider.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
@@ -28,6 +29,20 @@
 
   {# Footer #}
   {% include 'templates/partials/footer.njk' %}
-<script src="../js/cookies.js"></script>
+
+  <script src="../js/cookies.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/js/jquery.bxslider.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.bxslider').bxSlider({
+        responsive: false,
+        auto: true,
+        mode: 'fade',
+        speed: 300,
+        slideWidth: 509
+      });
+    });
+  </script>
 </body>
 </html>

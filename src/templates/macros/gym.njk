@@ -1,13 +1,13 @@
 {% macro addGym (address, telephone, class) %}
-  <section class="gym {{class}}">
-    <a><img src="" alt="gym photo"></a>
-    <div class="gym-info">
-        <b>Адрес:</b>
-        <p> {{ address }} </p>
-    </div>
-    <div class="gym-info">
+  <section class="gym {{ class }} clearfix">
+    <a><img src="../img/{{ class }}.jpg" alt="gym photo"></a>
+    <p class="gym-info">
+        <b>Адрес: </b>
+        {{ address }}
+    </p>
+    <p class="gym-info">
         <b>Телефон:</b>
-        <p> {{ telephone }} </p>
-    </div>
+        {{ telephone }}
+    </p>
   </section>
 {% endmacro %}
