@@ -8,9 +8,11 @@
 
 @max-width: 960px;
 @basic-font: 16px;
-@basic-bg-color: #dcdcdc;
+
+@basic-bg-color: #ffffff;
 @basic-color: #000000;
-@hover-color: #8F4848;
+@red-color: #8f4848;
+@green-color: #2b5656;
 @menu-padding: 10px;
 @img: "../img/";
 
@@ -20,7 +22,6 @@
 *
 *
 */
-
 .align-center() {
   margin: 0 auto;
 }
@@ -56,8 +57,25 @@
     }
 }
 
+
+.gym-color(@color) {
+  &::before {
+    background-color: @color;
+  }
+  .gym-info b {
+    .border-solid-rounded(2px, @color, 50%);
+  }
+
+  h3 {
+    border-bottom: 1px solid @color;
+  }
+
+  .gym-mark {
+    background-color: @color;
+  }
+}
+
 .program-color(@color) {
-  border-color: @color;
   h2 {
     color: @color;
   }
@@ -67,16 +85,21 @@
   }
 }
 
+
 /*
 *
 * General styles
 *
 */
-
-
 body {
+  background-color: @basic-bg-color;
   font-size: @basic-font;
   line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: @basic-color;
 }
 
 .clearfix::after {
@@ -105,24 +128,30 @@ main {
   padding: 0 10px;
 }
 
-.main-header,
-.main-footer {
+.mark {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: @red-color;
+}
+
+
+/*
+*
+* Header
+*
+*/
+.main-header {
   padding: 20px 0;
-  background: @basic-bg-color url('@{img}/pattern.png') repeat;
+  background: #dcdcdc url('@{img}/pattern.png') repeat;
   color: @basic-color;
 }
 
 .logo {
   .reset-space;
   font-size: 3em;
-}
-
-.logo-mark {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 1.5em;
-  color: #ffffff;
-  background-color: @hover-color;
 }
 
 .main-nav {
@@ -146,8 +175,8 @@ main {
 
   &:hover,
   &.main-nav-selected {
-    color: @hover-color;
-    box-shadow: 0 3px  @hover-color;
+    color: @red-color;
+    box-shadow: 0 3px  @red-color;
   }
 }
 
@@ -165,7 +194,7 @@ input[type="search"] {
   padding: @v-padding 10px;
   font: inherit;
   .reset-style;
-  .border-solid-rounded(@border, @hover-color, 15px);
+  .border-solid-rounded(@border, @red-color, 15px);
 }
 
 .btn-search {
@@ -173,7 +202,7 @@ input[type="search"] {
   padding: 15px;
   font-size: 0;
   vertical-align: bottom;;
-  background: @hover-color url('@{img}/magnifier.svg') center center no-repeat;
+  background: @red-color url('@{img}/magnifier.svg') center center no-repeat;
   border-radius: 50%;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 
@@ -182,9 +211,23 @@ input[type="search"] {
   }
 }
 
+/*
+*
+* Main
+*
+*/
+
+main {
+  padding-top: 30px;
+}
+
 .slider-block {
   float: left;
   width: 560px;
+}
+
+.index-block {
+  margin-bottom: 20px;
 }
 
 
@@ -194,44 +237,119 @@ input[type="search"] {
 }
 
 .gym {
-  margin-bottom: 40px;
+  @padding: 100px;
 
-  a {
-    float: left;
-    margin-right: 10px;
+  position: relative;
+  min-height: 125px;
+  margin-bottom: 20px;
+  padding-left: @padding + 10px;
+
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
+
+  &::before {
+    position: absolute;
+    left: 0;
+    width: @padding;
+    height: 100%;
+
+    content: "";
+  }
+
+  h3 {
+    .reset-space;
+    margin-bottom: 1em;
+    font-size: 1.2em;
   }
 }
 
-.program {
-  float: left;
+.gym-content {
+  padding: 10px;
+}
 
-  @h-padding: 20px;
-  @border: 1px;
-  .width(306, @h-padding, @border);
-  padding: 10px @h-padding;
+.gym-info {
+  .reset-space;
+  margin-bottom: 1em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  b {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+
+    font-size: 0;
+    vertical-align: top;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.gym-addr {
+  background: url("@{img}/addr.svg");
+}
+
+.gym-tel {
+  background: url("@{img}/tel.svg");
+}
+
+.gym-red {
+  .gym-color(@red-color);
+}
+
+.gym-green {
+  .gym-color(@green-color);
+}
+
+.program {
+  position: relative;
+  float: left;
+  min-height: 400px;
+  width: 306px;
   margin-right: 20px;
 
-  .border-solid-rounded(@radius: 15px);
+  text-align: center;
+  background-color: #eeeeee;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+
 
   &:last-child {
     margin-right: 0;
   }
 
+    h2 {
+      .reset-space;
+      padding: 10px;
+      background: #dcdcdc url('@{img}/pattern.png') repeat;
+    }
+
+
   &-gym {
-    .program-color (#ff0000);
+    .program-color (@red-color);
   }
 
   &-group {
-    .program-color (#00ff00);
+    .program-color (#8F6848);
   }
 
   &-salon {
-    .program-color (#0000ff);
+    .program-color (#397239);
   }
+}
+.program-content {
+  padding: 5px 20px;
 }
 
 .btn-prog {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
   padding: 10px 20px;
+  box-sizing: border-box;
 }
 
 .socials {

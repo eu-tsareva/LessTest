@@ -1,15 +1,9 @@
-{% macro addProgram (title, description, class, url, status1, status2) %}
-  <section class="program {{ class }}">
-    <header>
-      <span class="{{ status1 }}">
-        Красный зал
-      </span>
-      <span class="{{ status2 }}">
-        Зеленый зал
-      </span>
-    </header>
+{% macro addProgram (title, description, class, url) %}
+<section class="program {{ class }}">
     <h2> {{ title }}</h2>
-    <p> {{ description }}</p>
-    <a class="btn btn-prog" href="{{ url }}">Подробнее</a>
+    <div class="program-content">
+      <p> {{ description }}</p>
+      <a class="btn btn-prog" href="{{ url }}">Подробнее</a>
+    </div>
   </section>
 {% endmacro %}

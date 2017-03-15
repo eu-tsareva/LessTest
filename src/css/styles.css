@@ -15,8 +15,13 @@
 *
 */
 body {
+  background-color: #ffffff;
   font-size: 16px;
   line-height: 1.5;
+}
+a {
+  text-decoration: none;
+  color: #000000;
 }
 .clearfix::after {
   content: "";
@@ -31,7 +36,7 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: #dcdcdc;
+  background-color: #ffffff;
 }
 .container,
 main {
@@ -39,8 +44,20 @@ main {
   margin: 0 auto;
   padding: 0 10px;
 }
-.main-header,
-.main-footer {
+.mark {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: #8f4848;
+}
+/*
+*
+* Header
+*
+*/
+.main-header {
   padding: 20px 0;
   background: #dcdcdc url('../img//pattern.png') repeat;
   color: #000000;
@@ -49,13 +66,6 @@ main {
   margin: 0;
   padding: 0;
   font-size: 3em;
-}
-.logo-mark {
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 1.5em;
-  color: #ffffff;
-  background-color: #8F4848;
 }
 .main-nav {
   float: left;
@@ -85,8 +95,8 @@ main {
 }
 .main-nav-list a:hover,
 .main-nav-list a.main-nav-selected {
-  color: #8F4848;
-  box-shadow: 0 3px #8F4848;
+  color: #8f4848;
+  box-shadow: 0 3px #8f4848;
 }
 .search {
   float: right;
@@ -99,7 +109,7 @@ input[type="search"] {
   font: inherit;
   border: none;
   outline: none;
-  border: 2px solid #8F4848;
+  border: 2px solid #8f4848;
   border-radius: 15px;
 }
 .btn-search {
@@ -107,68 +117,153 @@ input[type="search"] {
   padding: 15px;
   font-size: 0;
   vertical-align: bottom;
-  background: #8F4848 url('../img//magnifier.svg') center center no-repeat;
+  background: #8f4848 url('../img//magnifier.svg') center center no-repeat;
   border-radius: 50%;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 .btn-search:hover {
   transform: scale(1.2);
 }
+/*
+*
+* Main
+*
+*/
+main {
+  padding-top: 30px;
+}
 .slider-block {
   float: left;
   width: 560px;
+}
+.index-block {
+  margin-bottom: 20px;
 }
 .index-aside {
   float: right;
   width: 400px;
 }
 .gym {
-  margin-bottom: 40px;
+  position: relative;
+  min-height: 125px;
+  margin-bottom: 20px;
+  padding-left: 110px;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
-.gym a {
-  float: left;
-  margin-right: 10px;
+.gym::before {
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  content: "";
+}
+.gym h3 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+.gym-content {
+  padding: 10px;
+}
+.gym-info {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1em;
+}
+.gym-info:last-child {
+  margin-bottom: 0;
+}
+.gym-info b {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+  font-size: 0;
+  vertical-align: top;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.gym-addr {
+  background: url("../img//addr.svg");
+}
+.gym-tel {
+  background: url("../img//tel.svg");
+}
+.gym-red::before {
+  background-color: #8f4848;
+}
+.gym-red .gym-info b {
+  border: 2px solid #8f4848;
+  border-radius: 50%;
+}
+.gym-red h3 {
+  border-bottom: 1px solid #8f4848;
+}
+.gym-red .gym-mark {
+  background-color: #8f4848;
+}
+.gym-green::before {
+  background-color: #2b5656;
+}
+.gym-green .gym-info b {
+  border: 2px solid #2b5656;
+  border-radius: 50%;
+}
+.gym-green h3 {
+  border-bottom: 1px solid #2b5656;
+}
+.gym-green .gym-mark {
+  background-color: #2b5656;
 }
 .program {
+  position: relative;
   float: left;
-  width: 264px;
-  padding: 10px 20px;
+  min-height: 400px;
+  width: 306px;
   margin-right: 20px;
-  border: 1px solid #000;
-  border-radius: 15px;
+  text-align: center;
+  background-color: #eeeeee;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
 }
 .program:last-child {
   margin-right: 0;
 }
-.program-gym {
-  border-color: #ff0000;
+.program h2 {
+  margin: 0;
+  padding: 0;
+  padding: 10px;
+  background: #dcdcdc url('../img//pattern.png') repeat;
 }
 .program-gym h2 {
-  color: #ff0000;
+  color: #8f4848;
 }
 .program-gym .btn-prog {
-  background-color: #ff0000;
-}
-.program-group {
-  border-color: #00ff00;
+  background-color: #8f4848;
 }
 .program-group h2 {
-  color: #00ff00;
+  color: #8F6848;
 }
 .program-group .btn-prog {
-  background-color: #00ff00;
-}
-.program-salon {
-  border-color: #0000ff;
+  background-color: #8F6848;
 }
 .program-salon h2 {
-  color: #0000ff;
+  color: #397239;
 }
 .program-salon .btn-prog {
-  background-color: #0000ff;
+  background-color: #397239;
+}
+.program-content {
+  padding: 5px 20px;
 }
 .btn-prog {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
   padding: 10px 20px;
+  box-sizing: border-box;
 }
 .socials {
   float: left;

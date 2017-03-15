@@ -1,13 +1,16 @@
-{% macro addGym (address, telephone, class) %}
-  <section class="gym {{ class }} clearfix">
-    <a><img src="../img/{{ class }}.jpg" alt="gym photo"></a>
-    <p class="gym-info">
-        <b>Адрес: </b>
-        {{ address }}
-    </p>
-    <p class="gym-info">
-        <b>Телефон:</b>
-        {{ telephone }}
-    </p>
+{% macro addGym (address, telephone, color) %}
+  <section class="gym gym-{{ color }} clearfix">
+    {#<a><img src="../img/{{ class }}.jpg" alt="gym photo"></a>#}
+    <div class="gym-content">
+      <h3><a href="#"><b class="mark gym-mark">{{ color }}</b> зал</a></h3>
+      <p class="gym-info">
+          <b class="gym-addr">Адрес: </b>
+          {{ address }}
+      </p>
+      <p class="gym-info">
+          <b class="gym-tel">Телефон:</b>
+          {{ telephone }}
+      </p>
+    </div>
   </section>
 {% endmacro %}
