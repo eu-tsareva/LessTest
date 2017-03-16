@@ -11,6 +11,7 @@
 
 @basic-bg-color: #ffffff;
 @basic-color: #000000;
+
 @red-color: #8f4848;
 @green-color: #2b5656;
 @menu-padding: 10px;
@@ -51,6 +52,7 @@
   border-radius: @radius;
 }
 
+
 .horizontal-list (@padding: 10px) {
   .reset-space;
   list-style: none;
@@ -63,6 +65,10 @@
     }
 }
 
+.mark-color(@bg-color, @color: #ffffff) {
+  color: @color;
+  background-color: @bg-color;
+}
 
 .gym-color(@color) {
   &::before {
@@ -80,7 +86,7 @@
   }
 
   .gym-mark {
-    background-color: @color;
+    .mark-color(@color);
   }
 
 }
@@ -143,8 +149,6 @@ main {
   padding-right: 10px;
   font-size: 1.5em;
   text-transform: uppercase;
-  color: #ffffff;
-  background-color: @red-color;
 }
 
 
@@ -162,6 +166,10 @@ main {
 .logo {
   .reset-space;
   font-size: 3em;
+}
+
+.logo-mark {
+  .mark-color(@red-color);
 }
 
 .main-nav {
@@ -273,18 +281,36 @@ main {
     content: "";
   }
 
-  h3 {
-    .reset-space;
-    margin-bottom: 1em;
-    font-size: 1.2em;
-    a {
-      display: block;
+    h3 {
+      .reset-space;
+      margin-bottom: 1em;
+      font-size: 1.2em;
+
+      a {
+        display: block;
+      }
     }
-  }
 }
 
-.gym-content {
-  padding: 10px;
+.gym {
+  &-content {
+    padding: 10px;
+  }
+  &-addr {
+    background: url("@{img}/addr.svg");
+  }
+
+  &-tel {
+    background: url("@{img}/tel.svg");
+  }
+
+  &-red {
+    .gym-color(@red-color);
+  }
+
+  &-green {
+    .gym-color(@green-color);
+  }
 }
 
 .gym-info {
@@ -310,21 +336,6 @@ main {
   }
 }
 
-.gym-addr {
-  background: url("@{img}/addr.svg");
-}
-
-.gym-tel {
-  background: url("@{img}/tel.svg");
-}
-
-.gym-red {
-  .gym-color(@red-color);
-}
-
-.gym-green {
-  .gym-color(@green-color);
-}
 
 .program {
   position: relative;
@@ -334,7 +345,7 @@ main {
   margin-right: 20px;
   padding-bottom: 50px;
 
-  background-color: #eeeeee;
+  background-color: @basic-bg-color - #111111;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
 
 
@@ -355,17 +366,17 @@ main {
   }
 
   &-group {
-    .program-color (#8F6848);
+    .program-color (spin(@red-color, 30));
   }
 
   &-salon {
-    .program-color (#397239);
+    .program-color (spin(@red-color, 120));
   }
-}
 
-.program-content {
-  padding: 5px 20px;
-  text-align: left;
+  &-content {
+    padding: 5px 20px;
+    text-align: left;
+  }
 }
 
 .btn-prog {
@@ -389,7 +400,7 @@ main {
 .main-footer {
   min-height: 50px;
   padding: 30px;
-  background-color: #636363;
+  background-color: @basic-bg-color - #9c9c9c;
   box-shadow: inset 0 2px 5px 3px rgba(0,0,0,0.5);
 }
 

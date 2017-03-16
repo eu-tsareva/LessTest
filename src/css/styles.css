@@ -49,8 +49,6 @@ main {
   padding-right: 10px;
   font-size: 1.5em;
   text-transform: uppercase;
-  color: #ffffff;
-  background-color: #8f4848;
 }
 /*
 *
@@ -66,6 +64,10 @@ main {
   margin: 0;
   padding: 0;
   font-size: 3em;
+}
+.logo-mark {
+  color: #ffffff;
+  background-color: #8f4848;
 }
 .main-nav {
   float: left;
@@ -176,6 +178,44 @@ main {
 .gym-content {
   padding: 10px;
 }
+.gym-addr {
+  background: url("../img//addr.svg");
+}
+.gym-tel {
+  background: url("../img//tel.svg");
+}
+.gym-red::before {
+  background-color: #8f4848;
+}
+.gym-red .gym-info b {
+  border-color: #8f4848;
+}
+.gym-red h3 {
+  border-bottom: 1px solid #8f4848;
+}
+.gym-red h3:hover {
+  box-shadow: 0 2px #8f4848;
+}
+.gym-red .gym-mark {
+  color: #ffffff;
+  background-color: #8f4848;
+}
+.gym-green::before {
+  background-color: #2b5656;
+}
+.gym-green .gym-info b {
+  border-color: #2b5656;
+}
+.gym-green h3 {
+  border-bottom: 1px solid #2b5656;
+}
+.gym-green h3:hover {
+  box-shadow: 0 2px #2b5656;
+}
+.gym-green .gym-mark {
+  color: #ffffff;
+  background-color: #2b5656;
+}
 .gym-info {
   margin: 0;
   padding: 0;
@@ -197,42 +237,6 @@ main {
   background-position: center center;
   border-width: 2px;
   border-style: solid;
-}
-.gym-addr {
-  background: url("../img//addr.svg");
-}
-.gym-tel {
-  background: url("../img//tel.svg");
-}
-.gym-red::before {
-  background-color: #8f4848;
-}
-.gym-red .gym-info b {
-  border-color: #8f4848;
-}
-.gym-red h3 {
-  border-bottom: 1px solid #8f4848;
-}
-.gym-red h3:hover {
-  box-shadow: 0 2px #8f4848;
-}
-.gym-red .gym-mark {
-  background-color: #8f4848;
-}
-.gym-green::before {
-  background-color: #2b5656;
-}
-.gym-green .gym-info b {
-  border-color: #2b5656;
-}
-.gym-green h3 {
-  border-bottom: 1px solid #2b5656;
-}
-.gym-green h3:hover {
-  box-shadow: 0 2px #2b5656;
-}
-.gym-green .gym-mark {
-  background-color: #2b5656;
 }
 .program {
   position: relative;
@@ -261,16 +265,16 @@ main {
   background-color: #8f4848;
 }
 .program-group h2 {
-  color: #8F6848;
+  color: #8f6c48;
 }
 .program-group .btn-prog {
-  background-color: #8F6848;
+  background-color: #8f6c48;
 }
 .program-salon h2 {
-  color: #397239;
+  color: #488f48;
 }
 .program-salon .btn-prog {
-  background-color: #397239;
+  background-color: #488f48;
 }
 .program-content {
   padding: 5px 20px;
