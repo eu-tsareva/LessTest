@@ -158,9 +158,13 @@ main {
 *
 */
 .main-header {
-  padding: 20px 0;
   background: #dcdcdc url('@{img}/pattern.png') repeat;
   color: @basic-color;
+
+  & .container {
+    position: relative;
+    padding: 20px 0;
+  }
 }
 
 .logo {
@@ -229,6 +233,34 @@ input[type="search"] {
   }
 }
 
+.history-wrapper {
+  position: absolute;
+  top: 10%;
+  right: 0;
+
+  text-align: right;
+}
+
+#history {
+  font-size: 0.6;
+  color: lighten(@basic-color, 40%);
+}
+
+.btn-bookmark {
+  display: inline-block;
+  .reset-space;
+  width: 35px;
+  height: 47px;
+
+  font-size: 0;
+  background: url("@{img}/bookmark.png") no-repeat;
+
+}
+
+.isBookmark {
+  background: url("@{img}/bookmark-grey.png") no-repeat;
+}
+
 /*
 *
 * Main
@@ -236,7 +268,25 @@ input[type="search"] {
 */
 
 main {
-  padding-top: 30px;
+  padding-top: 20px;
+}
+
+.breadcrumbs {
+  .horizontal-list;
+  margin-bottom: 20px;
+    a {
+      font-size: 0.8em;
+      font-weight: bold;
+      color: lighten(@basic-color, 40%);
+
+      &::after {
+        content: ">";
+      }
+
+      &:last-child::after {
+        content: "";
+      }
+    }
 }
 
 .slider-block {

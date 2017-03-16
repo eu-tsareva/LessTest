@@ -15,14 +15,8 @@
 
   {# Main content #}
   <main class="clearfix">
-    {#
+    {# breadcrumbs #}
     {% include 'templates/partials/breadcrumbs.njk' %}
-    <div class="history-wrapper">
-      <b>History:</b>
-      <div id="history"></div>
-      <button id="bookmark"></button>
-    </div>
-    #}
 
     {% block content %} {% endblock %}
   </main>
@@ -30,9 +24,10 @@
   {# Footer #}
   {% include 'templates/partials/footer.njk' %}
 
-  <script src="../js/cookies.js"></script>
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="/js/jquery.bxslider.min.js"></script>
+  <script src="../js/cookies.js"></script>
   <script>
     $(document).ready(function(){
       $('.bxslider').bxSlider({
@@ -43,6 +38,13 @@
         captions: true,
         slideWidth: 509
       });
+
+      // $('#bookmark').on('click', function(e) {
+      //   e.preventDefault();
+      //
+      //   console.log(e.type);
+      //   $(this).toggleClass('isBookmark');
+      // });
     });
   </script>
 </body>

@@ -56,9 +56,12 @@ main {
 *
 */
 .main-header {
-  padding: 20px 0;
   background: #dcdcdc url('../img//pattern.png') repeat;
   color: #000000;
+}
+.main-header .container {
+  position: relative;
+  padding: 20px 0;
 }
 .logo {
   margin: 0;
@@ -126,13 +129,59 @@ input[type="search"] {
 .btn-search:hover {
   transform: scale(1.2);
 }
+.history-wrapper {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  text-align: right;
+}
+#history {
+  font-size: 0.6;
+  color: #666666;
+}
+.btn-bookmark {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 35px;
+  height: 47px;
+  font-size: 0;
+  background: url("../img//bookmark.png") no-repeat;
+}
+.isBookmark {
+  background: url("../img//bookmark-grey.png") no-repeat;
+}
 /*
 *
 * Main
 *
 */
 main {
-  padding-top: 30px;
+  padding-top: 20px;
+}
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 20px;
+}
+.breadcrumbs li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.breadcrumbs li a {
+  display: block;
+}
+.breadcrumbs a {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #666666;
+}
+.breadcrumbs a::after {
+  content: ">";
+}
+.breadcrumbs a:last-child::after {
+  content: "";
 }
 .slider-block {
   float: left;

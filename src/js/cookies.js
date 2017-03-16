@@ -82,9 +82,11 @@ function updateBookmarks(alias, buttonID="bookmark") {
 	if (temp.indexOf(alias) != -1) {
 		button.setAttribute("onclick", "deleteBookmark('" + alias + "')");
 		button.innerText = 'Удалить закладку';
+    button.classList.add('isBookmark');
 	} else {
 		button.setAttribute("onclick", "setBookmark('" + alias + "')");
 		button.innerText = 'Добавить закладку';
+    button.classList.remove('isBookmark');
 	}
 }
 
