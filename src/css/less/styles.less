@@ -36,6 +36,12 @@
   outline: none;
 }
 
+.round(@size) {
+  width: @size;
+  height: @size;
+  border-radius: 50%;
+}
+
 .width(@parent, @padding, @border) {
   width: @parent - 2*@padding - 2*@border;
 }
@@ -63,16 +69,20 @@
     background-color: @color;
   }
   .gym-info b {
-    .border-solid-rounded(2px, @color, 50%);
+    border-color: @color;
   }
 
   h3 {
     border-bottom: 1px solid @color;
+    &:hover {
+      box-shadow: 0 2px @color;
+    }
   }
 
   .gym-mark {
     background-color: @color;
   }
+
 }
 
 .program-color(@color) {
@@ -226,6 +236,14 @@ main {
   width: 560px;
 }
 
+.bx-wrapper .bx-caption {
+  text-align: right;
+  span {
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+}
+
 .index-block {
   margin-bottom: 20px;
 }
@@ -259,6 +277,9 @@ main {
     .reset-space;
     margin-bottom: 1em;
     font-size: 1.2em;
+    a {
+      display: block;
+    }
   }
 }
 
@@ -276,15 +297,16 @@ main {
 
   b {
     display: inline-block;
-    width: 20px;
-    height: 20px;
+    .round(20px);
     padding: 3px;
 
     font-size: 0;
-    vertical-align: top;
+    vertical-align: middle;
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center center;
+    border-width: 2px;
+    border-style: solid;
   }
 }
 
@@ -307,11 +329,11 @@ main {
 .program {
   position: relative;
   float: left;
-  min-height: 400px;
   width: 306px;
+  min-height: 350px;
   margin-right: 20px;
+  padding-bottom: 50px;
 
-  text-align: center;
   background-color: #eeeeee;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
 
@@ -323,6 +345,7 @@ main {
     h2 {
       .reset-space;
       padding: 10px;
+      text-align: center;
       background: #dcdcdc url('@{img}/pattern.png') repeat;
     }
 
@@ -339,8 +362,10 @@ main {
     .program-color (#397239);
   }
 }
+
 .program-content {
   padding: 5px 20px;
+  text-align: left;
 }
 
 .btn-prog {
@@ -348,18 +373,50 @@ main {
   width: 100%;
   left: 0;
   bottom: 0;
-  padding: 10px 20px;
-  box-sizing: border-box;
+  padding: 10px 0;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #ffffff;
+  box-shadow: 0 0px 1px 2px rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    box-shadow: inset 0 -1px 2px 2px rgba(0,0,0,0.3);
+  }
+}
+
+.main-footer {
+  min-height: 50px;
+  padding: 30px;
+  background-color: #636363;
+  box-shadow: inset 0 2px 5px 3px rgba(0,0,0,0.5);
 }
 
 .socials {
-  float: left;
-  width: 700px;
-  text-align: center;
+  width: 400px;
   .horizontal-list(30px);
+  .align-center();
+
+  font-size: 0;
+  text-align: center;
 }
 
-.copyright {
-  float: right;
-  width: 200px;
+.social {
+  .round(40px);
+
+  &-vk {
+    background-image: url("@{img}/vk.svg");
+  }
+  &-fb {
+    background-image: url("@{img}/facebook.svg");
+  }
+  &-tw {
+    background-image: url("@{img}/twitter.svg");
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.3);
+  }
 }

@@ -6,16 +6,16 @@
   <section class="index-block clearfix">
     <div class="slider-block">
       <ul class="bxslider">
-        <li><img src="/img/pic1.jpg"></li>
-        <li><img src="/img/pic2.jpg"></li>
-        <li><img src="/img/pic3.jpg"></li>
-        <li><img src="/img/pic4.jpg"></li>
+        <li><img src="/img/pic1.jpg" title="Уютная атмосфера"></li>
+        <li><img src="/img/pic2.jpg" title="Современное оборудование"></li>
+        <li><img src="/img/pic3.jpg" title="Профессиональные тренеры"></li>
+        <li><img src="/img/pic4.jpg" title="Групповые занятия"></li>
       </ul>
     </div>
     <aside class="index-aside">
       {% import 'templates/macros/gym.njk' as gym %}
-      {{ gym.addGym("ул.Волгоградская 54б, вход со двора", "8(495)254-54-67", "gym-red") }}
-      {{ gym.addGym("ул.Битютская 16", "8(495)256-21-09", "gym-blue") }}
+      {{ gym.addGym("ул.Волгоградская 54б", "8 (495) 254-54-67", "red") }}
+      {{ gym.addGym("ул.Битютская 16", "8 (495) 256-21-09", "green") }}
     </aside>
   </section>
   <section class="index-block clearfix">
@@ -25,25 +25,19 @@
                             направленные на развитие всех групп мышц. Мы постарались сделать все,
                             чтобы вы непременно достигли поставленной цели, какой бы она ни была",
                            "program-gym",
-                           "/page/gym",
-                           "program-availiable",
-                           "program-availiable") }}
-    {{ program.addProgram ("Групповы программы",
+                           "/page/gym") }}
+    {{ program.addProgram ("Групповые программы",
                            "Занятия фитнесом в группе – это классика, которая подходит большинству посетителей.
                             Групповые программы в нашем клубе рассчитаны как для новичков, так и для
                             продвинутого уровня. Групповые занятия проходят в непринуждённой атмосфере,
                             где каждый может проявить себя по способностям.",
                            "program-group",
-                           "page/group",
-                           "program-availiable",
-                           "program-availiable") }}
+                           "page/group") }}
     {{ program.addProgram ("Салон красоты",
                            "Салон красоты — место, где вы можете расслабиться после напряженных тренировок,
                             наслаждаясь приятным уходом и первоклассным обслуживанием. Несмотря на широкое
                             разнообразие услуг, здесь чувствуешь себя как дома.",
                             "program-salon",
-                            "page/salon",
-                            "program-availiable",
-                            "program-notavailiable") }}
+                            "page/salon") }}
   </section>
 {% endblock %}
