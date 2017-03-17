@@ -127,7 +127,8 @@ input[type="search"] {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 .btn-search:hover {
-  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 .history-wrapper {
   position: absolute;
@@ -147,9 +148,13 @@ input[type="search"] {
   height: 47px;
   font-size: 0;
   background: url("../img//bookmark.png") no-repeat;
+  opacity: 0.6;
+}
+.btn-bookmark:hover {
+  opacity: 1;
 }
 .isBookmark {
-  background: url("../img//bookmark-grey.png") no-repeat;
+  opacity: 1;
 }
 /*
 *
@@ -381,6 +386,7 @@ main {
   background-image: url("../img//twitter.svg");
 }
 .social:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
 }
